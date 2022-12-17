@@ -4,7 +4,7 @@ from django.core.mail import EmailMessage
 from config.celery import app
 
 
-@app.task
+@app.task()
 def task_send_email():
     print("email 들어왔나요?")
     subject = "message"
