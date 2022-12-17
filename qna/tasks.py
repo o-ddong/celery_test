@@ -1,9 +1,12 @@
-from celery import shared_task
+
 from django.core.mail import EmailMessage
 
+from config.celery import app
 
-@shared_task
+
+@app.task
 def task_send_email():
+    print("email 들어왔나요?")
     subject = "message"
     to = ["odh0112@naver.com"]
     from_email = "odh0112@naver.com"

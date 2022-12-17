@@ -93,14 +93,13 @@ DEFAULT_FROM_MAIL = django_env_file["DEFAULT_FROM_MAIL"]
 
 
 # celery
-CELERY_ALWAYS_EAGER = django_env_file["CELERY_ALWAYS_EAGER"]
-CELERY_BROKER_URL = django_env_file["CELERY_BROKER_URL"]
-CELERY_BROKER_REDIS_URL = django_env_file["CELERY_BROKER_REDIS_URL"]
-CELERY_RESULT_BACKEND = django_env_file["CELERY_RESULT_BACKEND"]
-CELERY_ACCEPT_CONTENT = django_env_file["CELERY_ACCEPT_CONTENT"]
-CELERY_TASK_SERIALIZER = django_env_file["CELERY_TASK_SERIALIZER"]
-CELERY_RESULT_SERIALIZER = django_env_file["CELERY_RESULT_SERIALIZER"]
-CELERY_TIMEZONE = django_env_file["CELERY_TIMEZONE"]
+CELERY_BROKER_URL = 'redis://127.0.0.1:6379/0'
+CELERY_RESULT_BACKEND = 'redis://localhost:6379/0'
+CELERY_ACCEPT_CONTENT = ['application/json']
+CELERY_RESULT_SERIALIZER = 'json'
+CELERY_TASK_SERIALIZER = 'json'
+CELERY_TIMEZONE = 'Asia/Seoul'
+
 
 # Password validation
 # https://docs.djangoproject.com/en/4.1/ref/settings/#auth-password-validators
